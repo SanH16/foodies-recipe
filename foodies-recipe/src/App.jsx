@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold ">Hai</h1>
+      <h1 className="text-center text-2xl font-bold ">Hai</h1>
     </>
   );
 }
