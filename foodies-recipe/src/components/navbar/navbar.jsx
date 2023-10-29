@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/icon/foodies-icon.svg";
+import logo from "../../assets/icon/foodies-icon-new.svg";
 import { Tooltip } from "antd";
 
 export default function Navbar() {

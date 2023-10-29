@@ -1,13 +1,10 @@
 import "./App.css";
-import Home from "./components/home/home";
-import Navbar from "./components/navbar/navbar";
+import Router from "./router/Router";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Home />
-      <h1 className="text-center text-2xl font-bold ">Hai</h1>
+      <Router />
     </>
   );
 }
