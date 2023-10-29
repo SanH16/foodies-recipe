@@ -28,7 +28,7 @@ export default function Navbar() {
               <p className="text-purple-700">Sign in</p>
             </button> */}
             <button className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]">
-              <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs">Login</p>
+              <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Login</p>
             </button>
           </div>
         </div>
