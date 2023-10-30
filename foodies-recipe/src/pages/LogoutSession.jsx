@@ -1,18 +1,20 @@
-import { Button } from "antd";
+import { Button, Result } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 
 function LogoutSession() {
   return (
-    <div>
-      <h1>440 | Login Time Out</h1>
-      <p>
-        The clien's session has expired and must{" "}
-        <Link to="/login">
-          <Button type="link">Login</Button>
-        </Link>
-        again
-      </p>
+    <div className="pt-10">
+      <Result
+        status="404"
+        title="440 | Login Time Out"
+        subTitle="Sorry, the The clien's session has expired and must Login again."
+        extra={
+          <Link to="/login">
+            <Button type="link">Login</Button>
+          </Link>
+        }
+      />
     </div>
   );
 }

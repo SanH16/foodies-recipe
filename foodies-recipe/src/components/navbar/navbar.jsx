@@ -35,19 +35,20 @@ export default function Navbar() {
                 <span>{auth.currentUser.displayName}</span>
               </>
             )}
-            <button
-              onClick={() => authServices.logOut()}
-              className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]"
-            >
-              <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Logout</p>
-            </button>
 
-            {!authServices.isAuthorized() && (
+            {!authServices.isAuthorized() ? (
               <Link to="/login">
                 <button className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]">
                   <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Login</p>
                 </button>
               </Link>
+            ) : (
+              <button
+                onClick={() => authServices.logOut()}
+                className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]"
+              >
+                <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Logout</p>
+              </button>
             )}
           </div>
         </div>

@@ -11,12 +11,15 @@ import LogoutSession from "../pages/LogoutSession";
 import { LoginPages } from "../pages/LoginPages";
 import { SignUpPages } from "../pages/SignUpPages";
 import UnauthorizedPages from "../pages/UnauthorizedPages";
+import Layout from "../layouts/Layout";
 
 function Router() {
   return (
     <Routes>
-      <Route path="/" element={<PrivateRouter />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<HomePages />} />
+      </Route>
+      <Route path="/" element={<PrivateRouter />}>
         <Route path="/recipes" element={<RecipesPages />} />
         <Route path="/searched/:searched" element={<SearchedPages />} />
         <Route path="/add-recipes" element={<AddRecipe />} />
