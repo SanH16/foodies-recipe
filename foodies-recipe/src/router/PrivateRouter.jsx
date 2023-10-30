@@ -1,7 +1,7 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import UnauthorizedPages from "../pages/UnauthorizedPages";
 import Layout from "../layouts/Layout";
+import { Outlet } from "react-router-dom";
 import { authServices } from "../configs/auth";
 
 export default function PrivateRouter() {

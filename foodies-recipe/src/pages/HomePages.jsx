@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import imageVector from "../assets/img/foodies-vector.png";
 import { Link } from "react-router-dom";

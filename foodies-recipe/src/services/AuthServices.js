@@ -7,6 +7,7 @@ export class AuthServices {
     if (this.getToken() || this.getRefreshToken()) return true;
     return false;
   }
+
   getToken() {
     const token = Cookies.get("token") || Cookies.get("oauthAccessToken");
     return token;

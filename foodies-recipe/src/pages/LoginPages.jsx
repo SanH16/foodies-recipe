@@ -1,11 +1,11 @@
-import { auth } from "../configs/firebase";
-import { Link, useNavigate } from "react-router-dom";
-import { Button, Col, Form, Input, Row, message } from "antd";
-import { GoogleOutlined, SmileOutlined } from "@ant-design/icons";
 import Paragraph from "antd/es/typography/Paragraph";
-import { APIauth } from "../apis/APIauth";
-import { useForm } from "antd/es/form/Form";
 import loginVector from "../assets/img/login-vector.jpg";
+import { useForm } from "antd/es/form/Form";
+import { Link, useNavigate } from "react-router-dom";
+import { GoogleOutlined, SmileOutlined } from "@ant-design/icons";
+import { Button, Col, Form, Input, Row, message } from "antd";
+import { auth } from "../configs/firebase";
+import { APIauth } from "../apis/APIauth";
 
 export const LoginPages = () => {
   const { form } = useForm();

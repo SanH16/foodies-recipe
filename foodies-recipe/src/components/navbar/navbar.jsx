@@ -25,10 +25,8 @@ export default function Navbar() {
               <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">Contact</p>
             </div>
           </div>
+
           <div className="lg:w-[255px] sm:w-[150px] flex justify-between">
-            {/* <button className="lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[16px] sm:py-[6px]">
-              <p className="text-purple-700">Sign in</p>
-            </button> */}
             {auth.currentUser && (
               <>
                 <Image width={80} src={auth.currentUser.photoURL} />

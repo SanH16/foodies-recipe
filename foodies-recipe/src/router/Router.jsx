@@ -8,10 +8,10 @@ import AddRecipe from "../components/AddRecipe";
 import ProtectedRouter from "./ProtectedRouter";
 import PrivateRouter from "./PrivateRouter";
 import LogoutSession from "../pages/LogoutSession";
-import { LoginPages } from "../pages/LoginPages";
-import { SignUpPages } from "../pages/SignUpPages";
 import UnauthorizedPages from "../pages/UnauthorizedPages";
 import Layout from "../layouts/Layout";
+import { SignUpPages } from "../pages/SignUpPages";
+import { LoginPages } from "../pages/LoginPages";
 
 function Router() {
   return (
