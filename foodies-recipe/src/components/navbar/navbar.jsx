@@ -1,7 +1,9 @@
 import React from "react";
 import logo from "../../assets/icon/foodies-icon-new.svg";
-import { Tooltip } from "antd";
+import { Image, Tooltip } from "antd";
 import { Link } from "react-router-dom";
+import { authServices } from "../../configs/auth";
+import { auth } from "../../configs/firebase";
 
 export default function Navbar() {
   return (
@@ -19,17 +21,37 @@ export default function Navbar() {
               <Link to="/recipes">
                 <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">Recipes</p>
               </Link>
-              <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">About</p>
-              <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">Contact</p>
+              <Link to="/add-recipes">
+                <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">Add Recipes</p>
+              </Link>
+              <Link to="/searched">
+                <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">Cuisine</p>
+              </Link>
             </div>
           </div>
+
           <div className="lg:w-[255px] sm:w-[150px] flex justify-between">
-            {/* <button className="lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[16px] sm:py-[6px]">
-              <p className="text-purple-700">Sign in</p>
-            </button> */}
-            <button className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]">
-              <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Login</p>
-            </button>
+            {auth.currentUser && (
+              <>
+                <Image width={80} src={auth.currentUser.photoURL} />
+                <span>{auth.currentUser.displayName}</span>
+              </>
+            )}
+
+            {!authServices.isAuthorized() ? (
+              <Link to="/login">
+                <button className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]">
+                  <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Login</p>
+                </button>
+              </Link>
+            ) : (
+              <button
+                onClick={() => authServices.logOut()}
+                className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]"
+              >
+                <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Logout</p>
+              </button>
+            )}
           </div>
         </div>
       </nav>

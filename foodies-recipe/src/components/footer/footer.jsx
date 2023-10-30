@@ -2,9 +2,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div>
+    <footer className="mt-[150px]">
       <hr />
-      <p>Footer</p>
-    </div>
+    </footer>
   );
 }
