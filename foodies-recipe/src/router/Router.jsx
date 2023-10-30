@@ -1,23 +1,37 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import HomePages from "../pages/HomePages";
-import Layout from "../layouts/Layout";
 import RecipesPages from "../pages/RecipesPages";
 import SearchedPages from "../pages/SearchedPages";
 import NotFoundPages from "../pages/NotFoundPages";
+import AddRecipe from "../components/AddRecipe";
+import ProtectedRouter from "./ProtectedRouter";
+import PrivateRouter from "./PrivateRouter";
+import LogoutSession from "../pages/LogoutSession";
+import { LoginPages } from "../pages/LoginPages";
+import { SignUpPages } from "../pages/SignUpPages";
+import UnauthorizedPages from "../pages/UnauthorizedPages";
 
 function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<PrivateRouter />}>
         <Route index element={<HomePages />} />
         <Route path="/recipes" element={<RecipesPages />} />
         <Route path="/searched/:searched" element={<SearchedPages />} />
+        <Route path="/add-recipes" element={<AddRecipe />} />
+      </Route>
+
+      <Route path="/" element={<ProtectedRouter />}>
+        <Route path="/login" element={<LoginPages />} />
+        <Route path="/signup" element={<SignUpPages />} />
+        <Route path="/logoutsession" element={<LogoutSession />} />
       </Route>
 
       <Route>
         <Route path="/404" element={<NotFoundPages />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
+        <Route path="/unauthorized" element={<UnauthorizedPages />} />
       </Route>
     </Routes>
   );

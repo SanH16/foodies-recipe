@@ -1,7 +1,9 @@
 import React from "react";
 import logo from "../../assets/icon/foodies-icon-new.svg";
-import { Tooltip } from "antd";
+import { Image, Tooltip } from "antd";
 import { Link } from "react-router-dom";
+import { authServices } from "../../configs/auth";
+import { auth } from "../../configs/firebase";
 
 export default function Navbar() {
   return (
@@ -27,9 +29,26 @@ export default function Navbar() {
             {/* <button className="lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[16px] sm:py-[6px]">
               <p className="text-purple-700">Sign in</p>
             </button> */}
-            <button className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]">
-              <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Login</p>
+            {auth.currentUser && (
+              <>
+                <Image width={80} src={auth.currentUser.photoURL} />
+                <span>{auth.currentUser.displayName}</span>
+              </>
+            )}
+            <button
+              onClick={() => authServices.logOut()}
+              className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]"
+            >
+              <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Logout</p>
             </button>
+
+            {!authServices.isAuthorized() && (
+              <Link to="/login">
+                <button className="bg-purple-600 hover:bg-[#B4310A] lg:px-[36px] lg:py-[10px] lg:rounded-[47px] sm:px-[20px] sm:py-[8px] sm:rounded-[20px]">
+                  <p className="text-white lg:text-[18px] md:text-[14px] sm:text-[12px] text-xs font-medium">Login</p>
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </nav>
