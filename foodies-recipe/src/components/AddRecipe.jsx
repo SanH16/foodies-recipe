@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Form, Input, Select, message } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { APIrecipe } from "../apis/APIrecipe";
+import { QuestionCircleOutlined, SlackOutlined } from "@ant-design/icons";
 
 const tags = [
   "Breakfast",
@@ -39,15 +40,43 @@ function AddRecipe() {
     }
   };
   return (
-    <Form form={form} onFinish={onFinish} name="control-hooks" style={{ maxWidth: 600 }}>
-      <Form.Item name="title">
-        <Input type="text" placeholder="title"></Input>
+    <Form form={form} onFinish={onFinish} name="control-hooks" className="mt-[10%]" style={{ maxWidth: 600 }}>
+      <Form.Item
+        name="title"
+        rules={[
+          {
+            required: true,
+            message: "Please input recipes title",
+          },
+          { whitespace: true, message: "Recipe title must be contain." },
+        ]}
+      >
+        <Input
+          type="text"
+          className="rounded-3xl py-2 mb-2"
+          placeholder="title"
+          prefix={<SlackOutlined style={{ fontSize: "20px" }} />}
+        ></Input>
       </Form.Item>
-      <Form.Item name="description">
-        <Input type="text" name="description" placeholder="description"></Input>
+      <Form.Item
+        name="description"
+        rules={[
+          {
+            required: true,
+            message: "Please input description",
+          },
+          { whitespace: true, message: "Recipe description must be contain." },
+        ]}
+      >
+        <Input
+          type="text"
+          className="rounded-3xl py-2 mb-2"
+          placeholder="description"
+          prefix={<SlackOutlined style={{ fontSize: "20px" }} />}
+        ></Input>
       </Form.Item>
       <Form.Item name="instructions">
-        <TextArea placeholder="instructions" />
+        <TextArea placeholder="instructions" prefix={<QuestionCircleOutlined style={{ fontSize: "20px" }} />} />
       </Form.Item>
       <Form.Item name="tags">
         <Select

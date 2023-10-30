@@ -21,8 +21,12 @@ export default function Navbar() {
               <Link to="/recipes">
                 <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">Recipes</p>
               </Link>
-              <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">About</p>
-              <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">Contact</p>
+              <Link to="/add-recipes">
+                <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">Add Recipes</p>
+              </Link>
+              <Link to="/searched">
+                <p className="lg:text-[18px] md:text-[16px] sm:text-[14px] text-xs">Cuisine</p>
+              </Link>
             </div>
           </div>
 
