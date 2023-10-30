@@ -14,7 +14,7 @@ function HomePages() {
           <p className="text-gray-500 text-lg mb-6">
             This product was created with the aim of providing a place to find information and share food recipes for
             culinary lovers and people who want to learn to cook. The website can display Food Recipe information such
-            as images, names and descriptions of Food Recipes.
+            as images names and descriptions of Food Recipes.
           </p>
           <Link to="/recipes">
             <button
