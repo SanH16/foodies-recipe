@@ -12,10 +12,11 @@ import UnauthorizedPages from "../pages/UnauthorizedPages";
 import Layout from "../layouts/Layout";
 import { SignUpPages } from "../pages/SignUpPages";
 import { LoginPages } from "../pages/LoginPages";
+import DetailRecipePages from "../pages/DetailRecipePages";
 
 function Router() {
   return (
-    <Routes>
+    <Routes location={location} key={location.pathname}>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePages />} />
       </Route>
@@ -23,6 +24,7 @@ function Router() {
         <Route path="/recipes" element={<RecipesPages />} />
         <Route path="/searched/:searched" element={<SearchedPages />} />
         <Route path="/add-recipes" element={<AddRecipe />} />
+        <Route path="/recipe/:id" element={<DetailRecipePages />} />
       </Route>
 
       <Route path="/" element={<ProtectedRouter />}>

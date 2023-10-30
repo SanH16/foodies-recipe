@@ -64,4 +64,51 @@ const Card = styled.div`
     align-items: center;
   }
 `;
-export { FormStyle, Grid, Card };
+
+const DetailWrapper = styled.div`
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  display: flex;
+  .active {
+    background: linear-gradient(35deg, #494949, #313131);
+    color: white;
+  }
+  img {
+    border-radius: 2rem;
+  }
+  h2 {
+    margin-bottom: 2rem;
+  }
+  li {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  ul {
+    margin-top: 2rem;
+  }
+`;
+
+const ButtonStyle = styled.button`
+  padding: 1rem 2rem;
+  color: #313131;
+  background: white;
+  border: 2px solid black;
+  margin-right: 2rem;
+  font-weight: 600;
+  border-radius: 10px;
+`;
+
+const Info = styled.div`
+  margin-left: 5rem;
+  h4 {
+    margin: 2rem 0rem;
+    text-align: justify;
+  }
+  li {
+    display: inline-block;
+    align-items: center;
+    margin: 0rem 1rem;
+  }
+`;
+
+export { FormStyle, Grid, Card, Info, ButtonStyle, DetailWrapper };
