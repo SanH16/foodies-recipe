@@ -2,6 +2,7 @@ import React from "react";
 
 import imageVector from "../assets/img/foodies-vector.png";
 import { Link } from "react-router-dom";
+import ButtonFloat from "../components/ButtonFloat";
 
 function HomePages() {
   return (
@@ -15,7 +16,6 @@ function HomePages() {
             This product was created with the aim of providing a place to find information and share food recipes for
             culinary lovers and people who want to learn to cook. The website can display Food Recipe information such
             as images, names and descriptions of Food Recipes and OpenAI to ask for Recipes name.
-
           </p>
           <Link to="/recipes">
             <button
@@ -31,6 +31,7 @@ function HomePages() {
           <img src={imageVector} alt="gambar" />
         </div>
       </main>
+      <ButtonFloat />
     </>
   );
 }

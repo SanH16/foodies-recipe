@@ -24,3 +24,11 @@ body {
   padding: 10px 20px;
   width: 50%;
 }
+
+.form-ai {
+  width: 800px;
+}
+
+.result {
+  text-align: start;
+}

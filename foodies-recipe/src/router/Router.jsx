@@ -13,6 +13,7 @@ import Layout from "../layouts/Layout";
 import { SignUpPages } from "../pages/SignUpPages";
 import { LoginPages } from "../pages/LoginPages";
 import DetailRecipePages from "../pages/DetailRecipePages";
+import AskAiPages from "../pages/AskAiPages";
 
 function Router() {
   return (
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/searched/:searched" element={<SearchedPages />} />
         <Route path="/add-recipes" element={<AddRecipe />} />
         <Route path="/recipe/:id" element={<DetailRecipePages />} />
+        <Route path="/ask-ai" element={<AskAiPages />} />
       </Route>
 
       <Route path="/" element={<ProtectedRouter />}>

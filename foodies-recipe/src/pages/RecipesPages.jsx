@@ -4,6 +4,7 @@ import Search from "../components/Search";
 import { APIrecipe } from "../apis/APIrecipe";
 import { Button, Card, Col, Flex, Row, message } from "antd";
 import { useNavigate } from "react-router-dom";
+import ButtonFloat from "../components/ButtonFloat";
 
 export default function RecipesPages() {
   const [recipe, setRecipe] = useState([]);
@@ -48,6 +49,7 @@ export default function RecipesPages() {
           </Row>
         ))}
       {/*  */}
+      <ButtonFloat />
     </div>
   );
 }
