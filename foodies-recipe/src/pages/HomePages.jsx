@@ -1,5 +1,3 @@
-import React from "react";
-
 import imageVector from "../assets/img/foodies-vector.png";
 import { Link } from "react-router-dom";
 import ButtonFloat from "../components/ButtonFloat";
@@ -7,7 +5,7 @@ import ButtonFloat from "../components/ButtonFloat";
 function HomePages() {
   return (
     <>
-      <main id="home" className="w-full grid justify-between">
+      <main id="home" className="w-full flex flex-col items-start relative">
         <div className="w-full lg:w-full md:w-3/6 sm:w-2/3 p-5">
           <h1 className="container lg:text-5xl md:text-3xl sm:text-2xl font-bold mb-4 text-[#494949]">
             Cooking recipe inspiration for everyone <br /> <span className="text-[#5c67e1]">Foodies.</span>
@@ -27,8 +25,8 @@ function HomePages() {
             </button>
           </Link>
         </div>
-        <div className="w-full lg:w-7/12">
-          <img src={imageVector} alt="gambar" />
+        <div className="w-full flex justify-end -mt-5">
+          <img src={imageVector} alt="gambar" className="w-[500px]" />
         </div>
       </main>
       <ButtonFloat />
